@@ -1,0 +1,30 @@
+# Time series data
+data('AirPassengers')
+AP <- AirPassengers
+str(AP)
+
+head(AP)
+ts(AP, frequency = 12, start = c(1949,1))
+
+attributes(AP)
+
+plot(AP)
+
+# Log transform
+AP <- log(AP)
+plot(AP)
+
+# decomposition of additive time series
+decomp <- decompose(AP)
+decomp$figure
+plot(decomp$figure,
+     type = 'b',
+     xlab = 'Month',
+     ylab = 'Sesaonality Index',
+     col = 'blue',
+     las = 2)
+
+plot(decomp)
+
+# ARIMA
+library(forecast)
