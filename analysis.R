@@ -3,6 +3,7 @@ data('AirPassengers')
 AP <- AirPassengers
 str(AP)
 
+
 head(AP)
 ts(AP, frequency = 12, start = c(1949,1))
 
